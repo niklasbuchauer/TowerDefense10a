@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=MapData
+comment1.params=type
+comment1.target=java.lang.String[]\ getMap(MapType)
+numComments=2

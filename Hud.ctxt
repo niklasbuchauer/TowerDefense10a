@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Hud
+comment1.params=g\ player\ waveManager
+comment1.target=void\ draw(java.awt.Graphics,\ Player,\ WaveManager)
+comment2.params=g\ player\ waveManager\ selected
+comment2.target=void\ draw(java.awt.Graphics,\ Player,\ WaveManager,\ int)
+comment3.params=g\ label\ value\ x\ y
+comment3.target=void\ drawStat(java.awt.Graphics,\ java.lang.String,\ java.lang.String,\ int,\ int)
+comment4.params=g\ key\ name\ cost\ selected\ x\ y
+comment4.target=void\ drawTowerLine(java.awt.Graphics,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ boolean,\ int,\ int)
+numComments=5

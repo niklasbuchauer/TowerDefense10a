@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TileType
+comment1.params=symbol\ buildable\ path\ color
+comment1.target=TileType(char,\ boolean,\ boolean,\ java.awt.Color)
+comment2.params=
+comment2.target=char\ getSymbol()
+comment3.params=
+comment3.target=boolean\ isBuildable()
+comment4.params=
+comment4.target=boolean\ isPath()
+comment5.params=
+comment5.target=java.awt.Color\ getColor()
+comment6.params=ch
+comment6.target=TileType\ fromChar(char)
+numComments=7
