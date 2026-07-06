@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=GameMap
+comment1.params=type
+comment1.target=GameMap(MapType)
+comment10.params=x\ y
+comment10.target=boolean\ canBuild(int,\ int)
+comment11.params=x\ y
+comment11.target=boolean\ isPath(int,\ int)
+comment12.params=g
+comment12.target=void\ draw(java.awt.Graphics)
+comment2.params=mapRows
+comment2.target=GameMap(java.lang.String[])
+comment3.params=
+comment3.target=void\ createMap()
+comment4.params=
+comment4.target=void\ parseTiles()
+comment5.params=
+comment5.target=void\ buildPath()
+comment6.params=type
+comment6.target=java.awt.Point\ findTile(TileType)
+comment7.params=current\ previous
+comment7.target=java.awt.Point\ findNextPathStep(java.awt.Point,\ java.awt.Point)
+comment8.params=tile
+comment8.target=java.awt.Point\ toCenter(java.awt.Point)
+comment9.params=
+comment9.target=java.util.ArrayList\ getPath()
+numComments=13
