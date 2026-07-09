@@ -25,7 +25,7 @@ public class ShadowBoss extends BossEnemy
     {
         super.update(path);
         stealthTimer++;
-        // Toggle visibility every 5 seconds (300 frames)
+        // unsichtbarkeit alle 5 sekunden (300 frames)                 kuss and iron1omen
         if (stealthTimer >= 300)
         {
             stealthTimer = 0;

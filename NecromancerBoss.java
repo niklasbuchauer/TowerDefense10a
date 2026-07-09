@@ -22,7 +22,7 @@ public class NecromancerBoss extends BossEnemy
     {
         super.update(path);
         summonTimer++;
-        if (summonTimer >= 300)
+        if (summonTimer >= 280)
         {
             summonTimer = 0;
             for (int i = 0; i < 2; i++)

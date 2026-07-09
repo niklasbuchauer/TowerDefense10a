@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 public class PoisonBullet extends Bullet
 {
-    private boolean poisonEnabled;
+    private boolean poisonEnabled; //bissl zu op
 
     public PoisonBullet(double x, double y, Enemy target, int damage, boolean poisonEnabled)
     {
@@ -18,8 +18,8 @@ public class PoisonBullet extends Bullet
         
         if (poisonEnabled)
         {
-            target.applyPoison(3, 8, 20); // 3 damage, 8 ticks, every 20 frames
-            // Additional poison status text
+            target.applyPoison(3, 8, 20); // 3 damage, 8 ticks, alle 20 frames (glaube kaput aber naja)
+            // extra text für poison schaden
             game.addFloatingText(target.getX(), target.getY() - 20, "Poison!", new Color(50, 200, 50));
         }
     }

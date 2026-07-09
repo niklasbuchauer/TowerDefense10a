@@ -41,4 +41,5 @@ public class HealerEnemy extends Enemy
         g.fillRect((int)x - 1, (int)y - 6, 3, 12);
         g.fillRect((int)x - 6, (int)y - 1, 12, 3);
     }
+    //warum keine kommentare ಠ_ಠ
 }

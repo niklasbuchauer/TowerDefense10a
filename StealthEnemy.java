@@ -22,7 +22,7 @@ public class StealthEnemy extends Enemy
         Composite old = g2.getComposite();
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
         super.draw(g);
-        // Flimmernder Rand
+        // Flimmernder Rand (bissl buggy)
         g2.setColor(new Color(150, 150, 150));
         g2.drawOval((int)x - 13, (int)y - 13, 26, 26);
         g2.setComposite(old);

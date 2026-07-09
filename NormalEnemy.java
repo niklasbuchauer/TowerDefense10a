@@ -15,7 +15,7 @@ public class NormalEnemy extends Enemy
     public void draw(Graphics g)
     {
         super.draw(g);
-        // Augen
+        // Augen, ooooh scary
         g.setColor(Color.BLACK);
         g.fillOval((int)x - 5, (int)y - 5, 4, 4);
         g.fillOval((int)x + 1, (int)y - 5, 4, 4);

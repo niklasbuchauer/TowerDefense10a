@@ -15,17 +15,18 @@ public class RailgunBullet extends Bullet
 
     protected void onHit(Game game)
     {
-        // Hits enemies along a line (40px width)
+        // hittet alle gegner auf linie (40px fett)
         for (Enemy e : allEnemies)
         {
             if (e.isDead()) continue;
             double dx = e.getX() - x;
             double dy = e.getY() - y;
             double dist = Math.abs(dx * Math.sin(0) - dy * Math.cos(0)); // vereinfacht
+                                                                         //das war nicht vereinfacht großer
             if (dist <= 40) 
             {
                 e.takeDamage(damage);
-                // Distinct magenta text for railgun hits
+                // lila text für der sitters railgun schaden
                 game.addFloatingText(e.getX(), e.getY(), "-" + damage, new Color(255, 0, 150));
             }
         }

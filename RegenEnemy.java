@@ -30,7 +30,7 @@ public class RegenEnemy extends Enemy
     public void draw(Graphics g)
     {
         super.draw(g);
-        // Green plus marker
+        // Grün plus marker
         g.setColor(new Color(50, 220, 50));
         g.fillRect((int)x - 1, (int)y - 6, 3, 12);
         g.fillRect((int)x - 6, (int)y - 1, 12, 3);

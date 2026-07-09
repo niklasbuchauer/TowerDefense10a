@@ -16,7 +16,7 @@ public class TitanBoss extends BossEnemy
 
     public void takeDamage(int damage)
     {
-        super.takeDamage(Math.max(1, damage - 15)); // hohe Rüstung
+        super.takeDamage(Math.max(1, damage - 15)); // hohe Rüstung                holy tank 
     }
 
     public Color getColor() { return new Color(120, 120, 120); }

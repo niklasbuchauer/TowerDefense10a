@@ -263,7 +263,7 @@ public class WaveManager
         {
             spawnIndex = 0;
             groupIndex++;
-            spawnTimer = 80; // Pause between groups
+            spawnTimer = 80; 
         }
         else
         {

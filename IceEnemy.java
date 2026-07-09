@@ -12,7 +12,7 @@ public class IceEnemy extends Enemy
         super(path, 75 + wave * 11, 0.85 + wave * 0.03, 16 + wave * 2);
     }
 
-    // Tower slow state is checked from Game
+    // turm slow state wird von game gecheckt
     public boolean isSlowingTowers() { return !isDead(); }
 
     public Color getColor() { return new Color(150, 220, 255); }
@@ -20,7 +20,7 @@ public class IceEnemy extends Enemy
     public void draw(Graphics g)
     {
         super.draw(g);
-        // Simple snowflake marker
+        // wunderschöne snow flakes (überhaupt ned von irgendwo kopiert das komplett verbugged ist)
         g.setColor(Color.WHITE);
         g.drawLine((int)x - 6, (int)y, (int)x + 6, (int)y);
         g.drawLine((int)x, (int)y - 6, (int)x, (int)y + 6);

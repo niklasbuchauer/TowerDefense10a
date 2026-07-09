@@ -22,7 +22,7 @@ public class KingBoss extends BossEnemy
     {
         super.update(path);
         summonTimer++;
-        if (summonTimer >= 360) // every 6 seconds
+        if (summonTimer >= 360) // alle 6 sekunden              ps. wird bissl schnell
         {
             summonTimer = 0;
             for (int i = 0; i < 3; i++)

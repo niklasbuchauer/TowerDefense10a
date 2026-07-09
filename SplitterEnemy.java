@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class SplitterEnemy extends Enemy
 {
-    private boolean isShard; // true = bereits ein Fragment
+    private boolean isShard; // true = bereits ein Fragment (sonst crash oder bluescreen)                   Hättest auch mal früher machen können ):
     
     private boolean shardsSpawned = false;
 
@@ -28,7 +28,7 @@ public class SplitterEnemy extends Enemy
     public void draw(Graphics g)
     {
         super.draw(g);
-        // Risse zeichnen
+        // Risse zeichnen                       ps. werden ned gezeichnet ╰(*°▽°*)╯
         g.setColor(new Color(200, 150, 255));
         int cx = (int)x, cy = (int)y;
         g.drawLine(cx - 8, cy - 4, cx, cy + 4);

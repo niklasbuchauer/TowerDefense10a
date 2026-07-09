@@ -15,7 +15,8 @@ public class SniperBullet extends Bullet
     protected void onHit()
     {
         if (canHeadshot && Math.random() < 0.30)
-            target.takeDamage(99999); // Instant-Kill
+            target.takeDamage(99999); // Insta-Kill       das bissl viel. lösch doch einfach den gegner und geb geld ( ͡° ͜ʖ ͡°) 
+                                      
         else
             target.takeDamage(damage);
     }

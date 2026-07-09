@@ -1,5 +1,6 @@
 public class MapData
 {
+    //wunderschöner ASCII map editor
     public static final String[] EASY = new String[]
     {
         "####################",
@@ -18,7 +19,7 @@ public class MapData
         "####################",
         "####################"
     };
-
+    //Map 2 (noch ned implementiert)
     public static final String[] CURVED = new String[]
     {
         "####################",

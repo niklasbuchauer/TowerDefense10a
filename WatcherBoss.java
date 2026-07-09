@@ -17,7 +17,7 @@ public class WatcherBoss extends BossEnemy
 
     public Color getColor() { return new Color(60, 60, 60); }
 
-    
+    //OMG ECGGCHAN !!!!!!!!!!!                          
      public void draw(Graphics g)
     {
         super.draw(g);

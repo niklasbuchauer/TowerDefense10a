@@ -17,7 +17,7 @@ public class IceSplinterEffect
         this.y       = y;
         this.radius  = radius;
         this.damage  = damage;
-        this.timer   = 20; // Short animation lifetime
+        this.timer   = 20; // kurze animation lebenszeit (dauer)
         this.enemies = enemies;
 
         // Immediate burst damage

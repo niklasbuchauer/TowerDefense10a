@@ -11,7 +11,7 @@ public class RapidTower extends Tower
     {
         super(x, y);
         range    = 90;
-        damage   = 8;
+        damage   = 100;
         fireRate = 8;
     }
 
@@ -27,7 +27,7 @@ public class RapidTower extends Tower
             return;
         }
 
-        // Level 5: warmup period
+        // Level 5: aufwärm fase der minigunnnn
         if (level >= 5 && !warmedUp)
         {
             warmupTimer++;
@@ -56,7 +56,7 @@ public class RapidTower extends Tower
     {
         if (level >= 4)
         {
-            // Doppelschuss
+            // Doppelschuss!!!
             bullets.add(new PoisonBullet(x - 3, y, target, damage, level >= 3));
             bullets.add(new PoisonBullet(x + 3, y, target, damage, level >= 3));
         }
@@ -87,8 +87,9 @@ public class RapidTower extends Tower
             case 2: return 250;
             case 3: return 600;
             case 4: return 1500;
-            default: return Integer.MAX_VALUE; // Level 5 cannot be upgraded
-        }
+            default: return Integer.MAX_VALUE; // Level 5  is max 
+            //selber bug wie bei basic turm
+       }
     }
 
     public String getUpgradeDescription()
@@ -125,7 +126,7 @@ public class RapidTower extends Tower
         g.setColor(Color.BLACK);
         g.drawString("" + level, x - 3, y + 5);
 
-        // Warmup indicator
+        // indicator von aufwärmfase
         if (level >= 5 && !warmedUp && warmupTimer > 0)
         {
             g.setColor(Color.RED);

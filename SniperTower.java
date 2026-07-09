@@ -46,12 +46,12 @@ public class SniperTower extends Tower
     {
         if (level >= 5)
         {
-            // Railgun: hits all enemies on the line
+            // Railgun: hhittet alle gegner in ner linie (OP!)
             bullets.add(new RailgunBullet(x, y, target, damage * 3, enemies));
         }
         else if (level >= 4)
         {
-            // Kopfschuss: 30% Instant-Kill-Chance
+            // Kopfschuss: 30% Instant-Kill-Chance 
             bullets.add(new SniperBullet(x, y, target, damage, true));
         }
         else
@@ -80,8 +80,9 @@ public class SniperTower extends Tower
             case 1: return 100;
             case 2: return 250;
             case 3: return 600;
-            case 4: return 1500;
-            default: return Integer.MAX_VALUE; // Level 5 cannot be upgraded
+            case 4: return 2000;   //war mal 1500 aber balancing
+            default: return Integer.MAX_VALUE; // Level 5 is max
+            //auch hier selber bug
         }
     }
 
@@ -92,7 +93,7 @@ public class SniperTower extends Tower
             case 1: return "Range: 220 -> 340";
             case 2: return "Utility: Stealth detection";
             case 3: return "Damage: 50 -> 80";
-            case 4: return "Damage: 80 -> 160";
+            case 4: return "Damage: 80 -> 160, der Sitter modus an!";
         }
         return "Max Level";
     }

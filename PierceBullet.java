@@ -8,7 +8,7 @@ public class PierceBullet extends Bullet
     private int pierceLeft;
     private boolean elite;
 
-    // Direction is locked to the initial target
+    // richtung is auf ursprung target gelocked 
     private double dirX;
     private double dirY;
 
@@ -22,7 +22,7 @@ public class PierceBullet extends Bullet
         this.pierceLeft = pierceCount;
         this.elite      = elite;
 
-        // Compute and lock direction to first target
+        // rechnet aus welche richtung und locked dann zum ersten target die richtung
         double dx   = target.getX() - x;
         double dy   = target.getY() - y;
         double dist = Math.sqrt(dx * dx + dy * dy);
@@ -34,18 +34,18 @@ public class PierceBullet extends Bullet
     {
         if (!active) return;
 
-        // Keep moving in the same direction
+        // bewegt sich in selbe richtung
         x += speed * dirX;
         y += speed * dirY;
 
-        // Deactivate when leaving the play area
+        // geht aus wenn aus spielfeld is
         if (x < 0 || x > 800 || y < 0 || y > 600)
         {
             active = false;
             return;
         }
 
-        // Check collision against all enemies once
+        // checkt collesion bei allen gegner ein mal
         for (Enemy e : allEnemies)
         {
             if (e.isDead()) continue;
@@ -70,7 +70,7 @@ public class PierceBullet extends Bullet
         }
     }
 
-    // Movement and collisions are fully handled in update()
+    // Movement und collisions sind fully in update() gehandelt           Danke man!
     protected void onHit(Game game) {}
 
     public void draw(Graphics g)
