@@ -45,11 +45,11 @@ public class Bullet
         }
     }
 
-    // Overridden by specialized bullet types
+    // wird von speciellen bullet-types überschrieben
     protected void onHit(Game game)
     {
         target.takeDamage(damage);
-        // Default red damage number
+        // Default rote text farbe
         game.addFloatingText(target.getX(), target.getY(), "-" + damage, Color.RED);
     }
 

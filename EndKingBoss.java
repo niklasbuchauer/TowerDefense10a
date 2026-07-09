@@ -33,11 +33,11 @@ public class EndKingBoss extends BossEnemy
 
         double hpPct = (double) health / maxHealth;
 
-        // Phase transitions
+        // Phasen transitions
         if (hpPct < 0.66 && phase == 1) { phase = 2; speed = baseSpeed * 1.3; }
         if (hpPct < 0.33 && phase == 2) { phase = 3; speed = baseSpeed * 1.8; stealth = true; }
 
-        // Summon every 4 seconds
+        // alle 4 sekunden spawn
         if (timer % 240 == 0)
         {
             enemyList.add(new NormalEnemy(pathRef, 100));
@@ -46,7 +46,7 @@ public class EndKingBoss extends BossEnemy
             if (phase >= 3) enemyList.add(new RegenEnemy(pathRef, 100));
         }
 
-        // Freeze immune
+        // Freeze immun             neinnnn die strats                          ggs
     }
 
     public void applyFreeze(int d) { /* ignore */ }

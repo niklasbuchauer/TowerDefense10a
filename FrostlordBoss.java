@@ -14,7 +14,7 @@ public class FrostlordBoss extends BossEnemy
         reward    = 220 + wave * 16;
     }
 
-    // Freeze-immun
+    // Freeze-immun                 jungs macht mal was kreatives hin, das ja boring ಠ_ಠ
     public void applyFreeze(int duration) { /* ignorieren */ }
 
     public Color getColor() { return new Color(100, 180, 255); }

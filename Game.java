@@ -29,11 +29,11 @@ public class Game extends Canvas implements Runnable
     private ArrayList<Tower> towers;
     private ArrayList<Bullet> bullets;
 
-    private int selectedTower; // 0 = no selection, 1-4 = selected tower type
+    private int selectedTower; // 0 = nichts ausgewählt, 1-4 = ein turm is ausgewählt
     
-    // Visual effect list and toggle
+    // liste von visuellen effecten und der toggle
     private List<FloatingText> floatingTexts = new ArrayList<>();
-    public boolean showDamageNumbers = true; // true = show, false = hide
+    public boolean showDamageNumbers = true; // true = die sind da, false = ned da
     
     private TowerInfoPanel infoPanel;
 
@@ -66,7 +66,7 @@ public class Game extends Canvas implements Runnable
         towers = new ArrayList<>();
         bullets = new ArrayList<>();
 
-        selectedTower = 0; // Start with no selection
+        selectedTower = 0; // man startet ohne auswahl
         
         infoPanel = new TowerInfoPanel();
 

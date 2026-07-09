@@ -29,17 +29,17 @@ public class EmperorBoss extends BossEnemy
         super.update(path);
         timer++;
 
-        // Toggle stealth every 8 seconds
+        // alle 8 sekunden stealth toggle
         if (timer % 480 == 0) stealth = !stealth;
 
-        // Summon reinforcements every 5 seconds
+        // alle 5 sekunden spawner
         if (timer % 300 == 0)
         {
             enemyList.add(new StealthEnemy(path, 90));
             enemyList.add(new RegenEnemy(path, 90));
         }
 
-        // Berserk below 30% health
+        // berserk modus unter 30% leben
         speed = (double) health / maxHealth < 0.3 ? baseSpeed * 1.8 : baseSpeed;
     }
 

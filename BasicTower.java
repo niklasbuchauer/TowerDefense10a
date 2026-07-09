@@ -34,7 +34,8 @@ public class BasicTower extends Tower
         }
         else if (level >= 3)
         {
-            // Piercing shot: hits 2-3 enemies
+            // Durchschuss: hitted 2-3 gegner
+            // fixed das bitte mal, keine ahnung was da falsch is
             int pierce = elite ? 3 : 2;
             bullets.add(new PierceBullet(x, y, target, damage, enemyRef, pierce, false));
         }
@@ -65,7 +66,8 @@ public class BasicTower extends Tower
             case 2: return 250;
             case 3: return 600;
             case 4: return 1500;
-            default: return Integer.MAX_VALUE; // Level 5 cannot be upgraded
+            default: return Integer.MAX_VALUE; //nach level 5 is nigs mehr
+            //bug: dannach wird einfach der int wert als upgrade kosten hingemacht ಠ_ಠ
         }
     }
 

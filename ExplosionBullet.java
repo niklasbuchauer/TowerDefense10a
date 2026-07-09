@@ -19,7 +19,7 @@ public class ExplosionBullet extends Bullet
 
     protected void onHit(Game game)
     {
-        // Area damage
+        // Flächen-schaden (is glaube kaput ಠ_ಠ)
         for (Enemy e : allEnemies)
         {
             if (e.isDead()) continue;
@@ -29,7 +29,7 @@ public class ExplosionBullet extends Bullet
             {
                 int dealt = elite ? damage * 2 : damage;
                 e.takeDamage(dealt);
-                // Orange damage text for each hit enemy
+                // orangener damage text für hits
                 game.addFloatingText(e.getX(), e.getY(), "-" + dealt, Color.ORANGE);
             }
         }

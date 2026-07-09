@@ -17,7 +17,7 @@ public class DemonBoss extends BossEnemy
     public void update(ArrayList<Point> path)
     {
         super.update(path);
-        // Moves faster at low health
+        // wird schneller bei unter  % leben
         double hpPercent = (double) health / maxHealth;
         if (hpPercent < 0.5)
             speed = baseSpeed * 1.5;

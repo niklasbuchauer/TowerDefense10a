@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ArmoredEnemy extends Enemy
 {
-    private int armor; // Flat damage reduction
+    private int armor; // weniger damage
 
     public ArmoredEnemy(ArrayList<Point> path, int wave)
     {
@@ -24,7 +24,7 @@ public class ArmoredEnemy extends Enemy
     public void draw(Graphics g)
     {
         super.draw(g);
-        // Shield marker
+        // schild
         g.setColor(new Color(210, 210, 210));
         g.drawOval((int)x - 7, (int)y - 7, 14, 14);
         g.drawOval((int)x - 4, (int)y - 4, 8, 8);

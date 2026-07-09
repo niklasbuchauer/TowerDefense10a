@@ -16,7 +16,7 @@ public class ArmorBoss extends BossEnemy
 
     public void takeDamage(int damage)
     {
-        super.takeDamage(damage / 2); // 50% projectile damage reduction
+        super.takeDamage(damage / 2); // 50% projectile damage weniger
     }
 
     public Color getColor() { return new Color(80, 60, 30); }

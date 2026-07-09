@@ -17,7 +17,8 @@ public class Enemy
     protected int currentPoint;
 
     private int freezeTimer;
-    private PoisonEffect poison = null;
+    //start werte auf null oder aus für default
+    private PoisonEffect poison = null; 
     
     protected boolean stealth = false;
     private boolean wasFrozen = false;
@@ -26,6 +27,7 @@ public class Enemy
 
     public Enemy(ArrayList<Point> path, int health, double speed, int reward)
     {
+        //lol das haben wir sogar gelernt
         this.health    = health;
         this.maxHealth = health;
         this.speed     = speed;
@@ -62,7 +64,7 @@ public class Enemy
             if (poison.isFinished()) poison = null;
         }
             
-        // Freeze-Effekt: Speed reduzieren
+        // Freeze-Effekt: Speed verlangsamen
         if (freezeTimer > 0)
         {
             freezeTimer--;
@@ -91,7 +93,7 @@ public class Enemy
             y += speed * dy / distance;
         }
     }
-
+    //ganz viele variablen, selbst beschreibent                     
     public void applyFreeze(int durationFrames)
     {
         freezeTimer = durationFrames;
@@ -145,7 +147,7 @@ public class Enemy
 
     public void draw(Graphics g)
     {
-    // Enemy body: blue when frozen, green when poisoned
+    // Gegner body: blau wenn eingefriert, grün wen vergiftet
     if (isFrozen())
         g.setColor(new Color(100, 180, 255));
     else if (isPoisoned())
@@ -155,7 +157,7 @@ public class Enemy
 
         g.fillOval((int)x - 12, (int)y - 12, 24, 24);
 
-        // Health bar
+        // Health bar      OMG 20 herzen, das ja wie in mc
         g.setColor(Color.BLACK);
         g.drawRect((int)x - 15, (int)y - 22, 30, 5);
         g.setColor(Color.GREEN);

@@ -17,7 +17,7 @@ public class FreezeTower extends Tower
 
     public void update(ArrayList<Enemy> enemies, ArrayList<Bullet> bullets)
     {
-        // Blizzard (Level 5): persistent slow field
+        // Blizzard (Level 5): großes feld um turm der alles verlangsamt
         if (level >= 5)
         {
             blizzardTimer++;
@@ -27,9 +27,9 @@ public class FreezeTower extends Tower
                 double dx = e.getX() - x;
                 double dy = e.getY() - y;
                 if (Math.sqrt(dx * dx + dy * dy) <= range)
-                    e.applyFreeze(10); // keep enemies continuously frozen
+                    e.applyFreeze(10); // macht das die immer eingefroren sind
             }
-            // Every 180 frames: short full freeze pulse
+            // alle 180 frames: kurzer freeze pulse 
             if (blizzardTimer >= 180)
             {
                 blizzardTimer = 0;
@@ -44,7 +44,7 @@ public class FreezeTower extends Tower
             }
         }
 
-        // Ice splinters (Level 4): damage enemies that just thawed
+        // Ice splinters (Level 4): macht schaden wenn sie entfrieren
         if (level >= 4)
         {
             for (Enemy e : new ArrayList<>(enemies))
@@ -54,7 +54,7 @@ public class FreezeTower extends Tower
                 double dy = e.getY() - y;
                 if (Math.sqrt(dx * dx + dy * dy) <= range + 40)
                 {
-                    // Spawn only when an enemy just thawed
+                    // check das nur spawned wenn alle entfroren sind
                     if (!e.isFrozen() && e.wasJustUnfrozen())
                     {
                         splinters.add(new IceSplinterEffect(e.getX(), e.getY(), 50, 15, enemies));
@@ -130,7 +130,8 @@ public class FreezeTower extends Tower
             case 2: return 250;
             case 3: return 600;
             case 4: return 1500;
-            default: return Integer.MAX_VALUE; // Level 5 cannot be upgraded
+            default: return Integer.MAX_VALUE; // level 5 is max
+            // immer noch der selbe bug (╯°□°)╯︵ ┻━┻
         }
     }
 
@@ -159,10 +160,10 @@ public class FreezeTower extends Tower
 
     public void draw(Graphics g)
     {
-        // Draw active splinter effects
+        // activer splinter effect wird gemalt
         for (IceSplinterEffect s : splinters) s.draw(g);
 
-        // Blizzard aura
+        // Blizzard aura (tiki tiki)
         if (level >= 5)
         {
             g.setColor(new Color(150, 220, 255, 40));

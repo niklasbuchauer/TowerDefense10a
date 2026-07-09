@@ -15,7 +15,7 @@ public class FreezeBullet extends Bullet
     {
         target.takeDamage(damage);
         target.applyFreeze(freezeDuration);
-        // Light blue damage text for freeze hits
+        // Hellblauer damage text für MR.freezeee (bullets)
         game.addFloatingText(target.getX(), target.getY(), "-" + damage, new Color(100, 200, 255));
     }
 
