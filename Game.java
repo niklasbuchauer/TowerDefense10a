@@ -360,7 +360,7 @@ public class Game extends Canvas implements Runnable
             drawPlacementPreview(g);
 
             hud.draw(g, player, waveManager, selectedTower);
-            if (infoPanel != null && infoPanel.isVisible())
+            if (infoPanel != null && infoPanel.isVisible() && selectedTower  == 0)
                 infoPanel.draw(g, player);
         }
         else if (state == GameState.GAME_OVER)
