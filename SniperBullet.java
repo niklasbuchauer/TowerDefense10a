@@ -16,6 +16,7 @@ public class SniperBullet extends Bullet
     {
         if (canHeadshot && Math.random() < 0.30)
             target.takeDamage(99999); // Insta-Kill       das bissl viel. lösch doch einfach den gegner und geb geld ( ͡° ͜ʖ ͡°) 
+									   //das wäre doch 5 zeilen mehr ):
                                       
         else
             target.takeDamage(damage);
