@@ -53,50 +53,68 @@ public class TowerInfoPanel
 
     public void draw(Graphics g, Player player)
     {
-        if (selectedTower == null) return;
-
-        g.setColor(PANEL_BG);
-        g.fillRect(PX, PY, PW, PH);
-        g.setColor(PANEL_BORDER);
-        g.drawRect(PX, PY, PW, PH);
-
-        g.setFont(TITLE_FONT);
-        g.setColor(TEXT);
-        g.drawString(selectedTower.getName() + "  Lv " + selectedTower.getLevel(), PX + 10, PY + 18);
-
-        g.setFont(BODY_FONT);
-        int tx = PX + 10;
-        int ty = PY + 40;
-        int lh = 16;
-
-        g.drawString("Schaden  " + selectedTower.getDamage(), tx, ty);
-        g.drawString("Reichweite  " + selectedTower.getRange(), tx, ty + lh);
-        g.drawString("Feuerrate  " + getFireRateLabel(), tx, ty + lh * 2);
-
-        g.drawString("Next  " + selectedTower.getUpgradePreview(), tx, ty + lh * 3);
-
-        int cost = selectedTower.getUpgradeCost();
-        g.setColor(ACCENT);
-        g.drawString("Kosten  " + cost + "$", tx, ty + lh * 4);
-
-        if (selectedTower.getLevel() >= 5)
+        // aktuelle refrence von lokaler variable 
+        Tower currentTower = this.selectedTower;
+    
+        // lokale variable wird jetzt gecheckt
+        if (currentTower != null) 
         {
-            g.setColor(BUTTON_BLOCKED);
-            g.fillRect(BTN_X, BTN_Y, BTN_W, BTN_H);
-            g.setColor(Color.WHITE);
-            g.setFont(BUTTON_FONT);
-            g.drawString("Max Level", BTN_X + 73, BTN_Y + 16);
+            g.setColor(PANEL_BG);
+            g.fillRect(PX, PY, PW, PH);
+            g.setColor(PANEL_BORDER);
+            g.drawRect(PX, PY, PW, PH);
+
+            g.setFont(TITLE_FONT);
+            g.setColor(TEXT);
+            
+            g.drawString(currentTower.getName() + "  Lv " + currentTower.getLevel(), PX + 10, PY + 18);
+
+            g.setFont(BODY_FONT);
+            int tx = PX + 10;
+            int ty = PY + 40;
+            int lh = 16;
+
+            g.drawString("Schaden  " + currentTower.getDamage(), tx, ty);
+            g.drawString("Reichweite  " + currentTower.getRange(), tx, ty + lh);
+        
+            
+            g.drawString("Feuerrate  " + getFireRateLabel(currentTower), tx, ty + lh * 2);
+
+            g.drawString("Next  " + currentTower.getUpgradePreview(), tx, ty + lh * 3);
+
+            int cost = currentTower.getUpgradeCost();
+            g.setColor(ACCENT);
+            g.drawString("Kosten  " + cost + "$", tx, ty + lh * 4);
+    
+            if (currentTower.getLevel() >= 5)
+            {
+                g.setColor(BUTTON_BLOCKED);
+                g.fillRect(BTN_X, BTN_Y, BTN_W, BTN_H);
+                g.setColor(Color.WHITE);
+                g.setFont(BUTTON_FONT);
+                g.drawString("Max Level", BTN_X + 73, BTN_Y + 16);
+            }
+            else
+            {   
+                boolean canAfford = player.getMoney() >= cost;
+                g.setColor(canAfford ? BUTTON_READY : BUTTON_BLOCKED);
+                g.fillRect(BTN_X, BTN_Y, BTN_W, BTN_H);
+                g.setColor(Color.WHITE);
+                g.setFont(BUTTON_FONT);
+                String btnText = canAfford ? "Aufwerten  (" + cost + "$)" : "Zu wenig Gold";
+                g.drawString(btnText, BTN_X + 42, BTN_Y + 16);
+            }
         }
-        else
-        {
-            boolean canAfford = player.getMoney() >= cost;
-            g.setColor(canAfford ? BUTTON_READY : BUTTON_BLOCKED);
-            g.fillRect(BTN_X, BTN_Y, BTN_W, BTN_H);
-            g.setColor(Color.WHITE);
-            g.setFont(BUTTON_FONT);
-            String btnText = canAfford ? "Aufwerten  (" + cost + "$)" : "Zu wenig Gold";
-            g.drawString(btnText, BTN_X + 42, BTN_Y + 16);
-        }
+    }
+
+    
+    private String getFireRateLabel(Tower tower)
+    {
+        int fr = tower.getFireRate();
+        if (fr <= 10)  return "Schnell  " + fr;
+        if (fr <= 25)  return "Normal  " + fr;
+        if (fr <= 50)  return "Langsam  " + fr;
+        return "Sehr langsam  " + fr;
     }
 
     private String getFireRateLabel()

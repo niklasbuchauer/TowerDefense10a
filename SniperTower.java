@@ -93,7 +93,7 @@ public class SniperTower extends Tower
             case 1: return "Range: 220 -> 340";
             case 2: return "Utility: Stealth detection";
             case 3: return "Damage: 50 -> 80";
-            case 4: return "Damage: 80 -> 160, der Sitter modus an!";
+            case 4: return "der Sitter modus an!";
         }
         return "Max Level";
     }
