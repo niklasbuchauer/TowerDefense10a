@@ -11,7 +11,7 @@ public class RapidTower extends Tower
     {
         super(x, y);
         range    = 90;
-        damage   = 100;
+        damage   = 8;
         fireRate = 8;
     }
 
